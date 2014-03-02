@@ -1,0 +1,8 @@
+packages
+bin
+obj
+*.user
+*.suo
+source/AgeBase/
+source/AgeBase.2/
+source/AgeBase.3/
