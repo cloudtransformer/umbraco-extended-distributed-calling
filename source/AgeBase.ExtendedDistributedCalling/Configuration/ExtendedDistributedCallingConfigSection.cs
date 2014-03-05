@@ -2,7 +2,7 @@
 
 namespace AgeBase.ExtendedDistributedCalling.Configuration
 {
-    public class DistributedCallingConfigSection : ConfigurationSection
+    public class ExtendedDistributedCallingConfigSection : ConfigurationSection
     {
         [ConfigurationProperty("enabled")]
         public bool Enabled

@@ -4,9 +4,9 @@ using AgeBase.ExtendedDistributedCalling.Interfaces;
 
 namespace AgeBase.ExtendedDistributedCalling.Providers
 {
-    public class AzureDistributedCallingProvider : IDistributedCallingProvider
+    public class AzureDistributedCallingProvider : IExtendedDistributedCallingProvider
     {
-        public List<string> GetAddresses()
+        public List<string> GetServers()
         {
             throw new NotImplementedException();
         }

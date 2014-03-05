@@ -2,8 +2,8 @@
 
 namespace AgeBase.ExtendedDistributedCalling.Interfaces
 {
-    public interface IDistributedCallingProvider
+    public interface IExtendedDistributedCallingProvider
     {
-        List<string> GetAddresses();
+        List<string> GetServers();
     }
 }
