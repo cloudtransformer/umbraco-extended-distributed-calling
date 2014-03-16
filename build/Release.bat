@@ -58,8 +58,8 @@ REM --------------------------------
 REM Commit and tag
 REM --------------------------------
 
-REM git add -A
-REM git commit -a -m "Release %VERSION%"
-REM git tag %VERSION%
+git add -A
+git commit -a -m "Release v%VERSION%"
+git tag v%VERSION%
 
 exit /b 0 
