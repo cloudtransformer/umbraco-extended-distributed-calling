@@ -13,17 +13,26 @@ REM --------------------------------
 REM Update version number
 REM --------------------------------
 
-..\tools\AssemblyInfoUtil.exe -set:%VERSION%.* "..\source\AgeBase.ExtendedDistributedCalling\Properties\AssemblyInfo.cs"
+msbuild Target-Update.msbuild
+set BUILD_STATUS=%ERRORLEVEL% 
+
+if %BUILD_STATUS%==0 goto continueupdate
+if not %BUILD_STATUS%==0 goto failupdate
+ 
+:failupdate
+exit /b 1 
+
+:continueupdate
 
 REM --------------------------------
 REM Build solution
 REM --------------------------------
 
-msbuild Build.msbuild
+msbuild Target-Build.msbuild
 set BUILD_STATUS=%ERRORLEVEL% 
 
-if %BUILD_STATUS%==0 goto continuebuild 
-if not %BUILD_STATUS%==0 goto failbuild 
+if %BUILD_STATUS%==0 goto continuebuild
+if not %BUILD_STATUS%==0 goto failbuild
  
 :failbuild
 exit /b 1 
@@ -34,7 +43,7 @@ REM --------------------------------
 REM Package solution
 REM --------------------------------
 
-msbuild Package.msbuild
+msbuild Target-Package.msbuild
 BUILD_STATUS=%ERRORLEVEL% 
 
 if %BUILD_STATUS%==0 goto continue 
@@ -49,8 +58,8 @@ REM --------------------------------
 REM Commit and tag
 REM --------------------------------
 
-git add -A
-git commit -a -m "Release %VERSION%"
-git tag %VERSION%
+REM git add -A
+REM git commit -a -m "Release %VERSION%"
+REM git tag %VERSION%
 
 exit /b 0 
