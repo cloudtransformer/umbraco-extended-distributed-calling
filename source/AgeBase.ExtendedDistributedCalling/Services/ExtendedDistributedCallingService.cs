@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
-using System.Web;
 using AgeBase.ExtendedDistributedCalling.Configuration;
 using AgeBase.ExtendedDistributedCalling.Exceptions;
 using AgeBase.ExtendedDistributedCalling.Interfaces;
@@ -42,7 +42,16 @@ namespace AgeBase.ExtendedDistributedCalling.Services
             if (string.IsNullOrEmpty(s_Login) || string.IsNullOrWhiteSpace(s_Password))
                 return;
 
-            var servers = s_Provider.GetServers();
+            var servers = new List<string>();
+            try
+            {
+                servers = s_Provider.GetServers();
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Error<ExtendedDistributedCallingService>("Error occurred while finding servers to refresh", ex);
+            }
+
             if (servers == null || !servers.Any())
                 return;
 
@@ -73,9 +82,6 @@ namespace AgeBase.ExtendedDistributedCalling.Services
 
         private static void GetUser()
         {
-            // Always find the user login and password as
-            // the user's password may have changed
-
             try
             {
                 var user = User.GetUser(s_Config.User);
@@ -92,17 +98,11 @@ namespace AgeBase.ExtendedDistributedCalling.Services
 
         private static void RefreshTarget(string server, string login, string password)
         {
-            var cleanedServer = server.Trim().ToLower();
-
-            // Ignore the current server
-            if (HttpContext.Current.Request.Url.Host.ToLower().Equals(cleanedServer))
-                return;
-
             try
             {
                 LogHelper.Debug<ExtendedDistributedCallingService>("Refreshing " + server);
 
-                using (var cacheRefresher = new ServerSyncWebServiceClient(cleanedServer))
+                using (var cacheRefresher = new ServerSyncWebServiceClient(server))
                     cacheRefresher.RefreshAll(new Guid(DistributedCache.PageCacheRefresherId), login, password);
             }
             catch (Exception ex)
