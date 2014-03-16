@@ -102,8 +102,8 @@ namespace AgeBase.ExtendedDistributedCalling.Providers
 
             var instancesResponse = ec2Client.DescribeInstances(instancesRequest);
 
-            // Find all private ip addresses
-            return (from reservation in instancesResponse.Reservations from instance in reservation.Instances select instance.PrivateIpAddress).ToList();
+            // Find all private dns names
+            return (from reservation in instancesResponse.Reservations from instance in reservation.Instances select instance.PrivateDnsName).ToList();
         }
     }
 }
