@@ -2,7 +2,6 @@
 using System.Web.Services;
 using System.Web.Services.Description;
 using System.Web.Services.Protocols;
-using Umbraco.Core.IO;
 
 namespace AgeBase.ExtendedDistributedCalling.Sync
 {
@@ -13,7 +12,7 @@ namespace AgeBase.ExtendedDistributedCalling.Sync
     {
         public ServerSyncWebServiceClient(string domain)
         {
-            Url = "http://" + domain.Trim() + IOHelper.ResolveUrl(SystemDirectories.WebServices) + "/cacheRefresher.asmx";
+            Url = "http://" + domain.Trim() + "/umbraco/webservices/cacheRefresher.asmx";
         }
 
         [SoapDocumentMethod("http://umbraco.org/webservices/RefreshAll",
@@ -23,7 +22,7 @@ namespace AgeBase.ExtendedDistributedCalling.Sync
             ParameterStyle = SoapParameterStyle.Wrapped)]
         public void RefreshAll(Guid uniqueIdentifier, string Login, string Password)
         {
-            Invoke("RefreshAll", new object[] { uniqueIdentifier, Login, Password });
+            BeginInvoke("RefreshAll", new object[] { uniqueIdentifier, Login, Password }, null, null);
         }
     }
 }
