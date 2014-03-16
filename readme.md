@@ -1,6 +1,6 @@
 # AgeBase: Extended Distributed Calling
 
-The Extended Distributed Calling package allows developers to create Distributed Calling providers to cater for scenarios where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling setup. For example, when hosting an Umbraco application in an Amazon ELB application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server address. Once obtained, a cache refresh request is sent to each server.
+The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for scenarios where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server address. Once obtained, a cache refresh request is sent to each server.
 
 ## Configuration
 
@@ -13,11 +13,11 @@ Add the following configuration section to `web.config` to configure and enable 
         <extendedDistributedCalling enabled="true" user="0" type="AgeBase.ExtendedDistributedCalling.Providers.AmazonDistributedCallingProvider" assembly="AgeBase.ExtendedDistributedCalling" />
     </configuration>
 
-The `enabled` attribute can be used to turn Extended Distributed Calling on or off. The `user` attribute must contain the used id which will be used to authenticate any cache refresh request. The `type` attribute must contain the full qualified class name. The `assembly` attribute must contain the assembly name where the type resides. 
+The `enabled` attribute can be used to turn Extended Distributed Calling on or off. The `user` attribute must contain the used id which will be used to authenticate any cache refresh request. The `type` attribute must contain the fully qualified class name. The `assembly` attribute must contain the assembly name where the type resides. 
 
 ## Providers
 
-To write your own provider, create a new class which implements the `IExtendedDistributedCallingProvider` interface. The interface contains one method which requires a list of addresses to be returned. To use your provider, change your the `type` and `assembly` configuration in web.config to the new provider. To get you started, the Extended Distributed Calling assembly contains the following providers for use within your Umbraco applications:
+To write your own provider, create a new class which implements the `IExtendedDistributedCallingProvider` interface. The interface contains one method which requires a list of addresses to be returned. To use your provider, change your `type` and `assembly` configuration in web.config to the your new provider. To get you started, the Extended Distributed Calling assembly contains the following providers for use within your Umbraco applications:
 
 ### Amazon Distributed Calling
 
@@ -46,7 +46,7 @@ The `AWS_ACCESS_KEY_ID` app setting must contain a valid access key to access th
   * `us-gov-west-1`
   * `cn-north-1`
   
-__Note:__ For the Amazon Distributed Calling provider to work correctly, each EC2 instance attached to the load balancer must be able to communicate with all other attached EC2 instances. To allow this, the EC2 instance security group must allow incoming calls from the ELB security group on port 80. Allowing this rule does not open up each EC2 instance publicly.
+__Note:__ For the Amazon Distributed Calling provider to work correctly, each EC2 instance attached to the load balancer must be able to communicate with all other attached EC2 instances. To allow this, the EC2 instance security group must allow incoming HTTP calls from the ELB security group on port 80. Allowing this rule does not open up each EC2 instance to the public.
 
 ## Contributing
 
