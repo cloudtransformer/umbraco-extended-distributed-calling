@@ -1,10 +1,10 @@
 # AgeBase: Extended Distributed Calling
 
-The Extended Distributed Calling service allows developers to create Distributed Calling providers to cater for scenarios where a hard coded list of server addresses is not possible to obtain. For example, when hosting an Umbraco application in an Amazon ELB application. The Extended Distributed Calling package will use the specified developer's provider to obtain a collection of server address. Once obtained, a cache refresh request is sent to each server.
+The Extended Distributed Calling package allows developers to create Distributed Calling providers to cater for scenarios where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling setup. For example, when hosting an Umbraco application in an Amazon ELB application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server address. Once obtained, a cache refresh request is sent to each server.
 
 ## Configuration
 
-Add the following configuration section to `web.config` to configure and enable Extended Distributed Calling. As a default, we've set-up the above example configuration with use the Amazon Distributed Calling provider:
+Add the following configuration section to `web.config` to configure and enable Extended Distributed Calling. As default, we've set-up the below example configuration to use the Amazon Distributed Calling provider:
 
     <configuration>
         <configSections>
