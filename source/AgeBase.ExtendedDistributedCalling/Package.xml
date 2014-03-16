@@ -28,7 +28,7 @@
       <name>AgeBase</name>
       <website>http://agebase.co.uk/</website>
     </author>
-    <readme><![CDATA[The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for scenarios where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server address. Once obtained, a cache refresh request is sent to each server.
+    <readme><![CDATA[The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for different scenarios. Specifically where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server addresses. Once obtained, a cache refresh request is sent to each server.
     
 Configuration
 
@@ -41,7 +41,7 @@ Add the following configuration section to web.config to configure and enable Ex
     &lt;extendedDistributedCalling enabled=&quot;true&quot; user=&quot;0&quot; type=&quot;AgeBase.ExtendedDistributedCalling.Providers.AmazonDistributedCallingProvider&quot; assembly=&quot;AgeBase.ExtendedDistributedCalling&quot; /&gt;
 &lt;/configuration&gt;
 
-The enabled attribute can be used to turn Extended Distributed Calling on or off. The user attribute must contain the used id which will be used to authenticate any cache refresh request. The type attribute must contain the fully qualified class name. The assembly attribute must contain the assembly name where the type resides.
+The enabled attribute can be used to turn Extended Distributed Calling on or off. The user attribute must contain the user id which will be used to authenticate any cache refresh request. The type attribute must contain the fully qualified class name. The assembly attribute must contain the assembly name where the type resides.
     
 For full documentation and instructions on how you can contribute, please go to https://github.com/agebase/umbraco-extended-distributed-calling]]></readme>
   </info>

@@ -1,6 +1,6 @@
 # AgeBase: Extended Distributed Calling
 
-The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for scenarios where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server address. Once obtained, a cache refresh request is sent to each server.
+The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for different scenarios. Specifically where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server addresses. Once obtained, a cache refresh request is sent to each server.
 
 ## Configuration
 
@@ -13,7 +13,7 @@ Add the following configuration section to `web.config` to configure and enable 
         <extendedDistributedCalling enabled="true" user="0" type="AgeBase.ExtendedDistributedCalling.Providers.AmazonDistributedCallingProvider" assembly="AgeBase.ExtendedDistributedCalling" />
     </configuration>
 
-The `enabled` attribute can be used to turn Extended Distributed Calling on or off. The `user` attribute must contain the used id which will be used to authenticate any cache refresh request. The `type` attribute must contain the fully qualified class name. The `assembly` attribute must contain the assembly name where the type resides. 
+The `enabled` attribute can be used to turn Extended Distributed Calling on or off. The `user` attribute must contain the user id which will be used to authenticate any cache refresh request. The `type` attribute must contain the fully qualified class name. The `assembly` attribute must contain the assembly name where the type resides. 
 
 ## Providers
 
