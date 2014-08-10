@@ -55,6 +55,21 @@ exit /b 1
 :continue
 
 REM --------------------------------
+REM Package NuGet 
+REM --------------------------------
+
+msbuild Target-NuGet.msbuild
+BUILD_STATUS=%ERRORLEVEL% 
+
+if %BUILD_STATUS%==0 goto continue 
+if not %BUILD_STATUS%==0 goto failpackage 
+ 
+:failpackage
+exit /b 1 
+
+:continue
+
+REM --------------------------------
 REM Commit and tag
 REM --------------------------------
 

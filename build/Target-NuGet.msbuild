@@ -6,6 +6,6 @@
   </PropertyGroup>
   <Target Name="Package">
     <Exec Command="..\nuget\NuGet.exe pack ..\build\Package.nuspec -Version $(Version) -Properties Configuration=Release" />
-    <Move SourceFiles="..\nuget\$(ProjectName).$(Version).nupkg" DestinationFolder="..\..\" />
+    <Move SourceFiles="..\build\$(ProjectName).$(Version).nupkg" DestinationFolder="..\..\" />
   </Target>
 </Project>
