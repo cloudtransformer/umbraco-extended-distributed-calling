@@ -1,0 +1,7 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <configSections>
+        <section name="extendedDistributedCalling" type="AgeBase.ExtendedDistributedCalling.Configuration.ExtendedDistributedCallingConfigSection, AgeBase.ExtendedDistributedCalling" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+    </configSections>
+	<extendedDistributedCalling enabled="true" user="0" type="AgeBase.ExtendedDistributedCalling.Providers.AmazonDistributedCallingProvider" assembly="AgeBase.ExtendedDistributedCalling" xdt:Transform="Remove" />
+</configuration>

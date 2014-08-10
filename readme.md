@@ -1,6 +1,6 @@
 # AgeBase: Extended Distributed Calling
 
-The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for different scenarios. Specifically where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server addresses. Once obtained, a cache refresh request is sent to each server.
+The Extended Distributed Calling package allows Umbraco developers to create and use Distributed Calling providers to cater for different load balanced scenarios. Specifically where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server addresses. Once obtained, a cache refresh request is sent to each server.
 
 ## Configuration
 

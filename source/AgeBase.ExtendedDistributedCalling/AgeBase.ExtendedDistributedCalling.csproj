@@ -217,6 +217,8 @@
     <None Include="Packages.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Transforms\web.config.uninstall.xdt" />
+    <None Include="Transforms\web.config.install.xdt" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Package.xml" />

@@ -1,21 +1,28 @@
 <?xml version="1.0"?>
-<package >
+<package>
   <metadata>
+    <title>Extended Distributed Calling</title>
     <id>AgeBase.ExtendedDistributedCalling</id>
     <version>1.0.1</version>
     <authors>AgeBase</authors>
     <owners>AgeBase</owners>
     <licenseUrl>http://www.opensource.org/licenses/mit-license.php</licenseUrl>
-    <projectUrl>http://our.umbraco.org/projects/developer-tools/extended-distributed-calling</projectUrl>
-    <iconUrl>http://our.umbraco.org/umbraco/imagegen.ashx?image=/media/wiki/112407/635306037316883814_635290165946615298_logopng.png&path=true&width=100&height=100</iconUrl>
+    <projectUrl>https://agebase.co.uk/blog/extended-distributed-calling-package-for-umbraco/</projectUrl>
+    <iconUrl>https://agebase.co.uk/media/14030/nuget-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>The Extended Distributed Calling package allows developers to create and use Distributed Calling providers to cater for different scenarios. Specifically where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server addresses. Once obtained, a cache refresh request is sent to each server.</description>
+    <description>The Extended Distributed Calling package allows Umbraco developers to create and use Distributed Calling providers to cater for different load balanced scenarios. Specifically where a hard coded list of server addresses is not possible to obtain for use within Umbraco's Distributed Calling configuration. For example, when hosting an Umbraco application in an Amazon Elastic Load Balanced application. The Extended Distributed Calling package uses a specified provider to obtain a collection of server addresses. Once obtained, a cache refresh request is sent to each server.</description>
+    <summary>The Extended Distributed Calling package allows Umbraco developers to create and use Distributed Calling providers to cater for different load balanced scenarios.</summary>
     <releaseNotes>Initial NuGet package release.</releaseNotes>
     <copyright>Copyright 2014</copyright>
     <tags>umbraco distributed calling load balancing cache</tags>
     <dependencies>
       <dependency id="AWSSDK" version="2.2.2.1" />
-      <dependency id="UmbracoCms.Core" version="7.1.4" />
+      <dependency id="UmbracoCms.Core" version="6.1.6" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="..\source\AgeBase.ExtendedDistributedCalling\bin\AgeBase.ExtendedDistributedCalling.dll" target="lib\AgeBase.ExtendedDistributedCalling.dll" />
+    <file src="..\source\AgeBase.ExtendedDistributedCalling\Transforms\web.config.install.xdt" target="content\web.config.install.xdt" />
+    <file src="..\source\AgeBase.ExtendedDistributedCalling\Transforms\web.config.uninstall.xdt" target="content\web.config.uninstall.xdt" />
+  </files>
 </package>
