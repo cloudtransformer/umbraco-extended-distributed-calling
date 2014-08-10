@@ -5,7 +5,7 @@
   <PropertyGroup>
     <ProjectName>AgeBase.ExtendedDistributedCalling</ProjectName>
     <ProjectFolder>$(MSBuildStartupDirectory)\..\Source\$(ProjectName)</ProjectFolder>
-    <PackageXmlFile>$(ProjectFolder)\package.xml</PackageXmlFile>
+    <PackageXmlFile>$(MSBuildStartupDirectory)\package.xml</PackageXmlFile>
   </PropertyGroup>
   <Target Name="Update">
     <Exec Command="..\tools\AssemblyInfoUtil.exe -set:%VERSION%.* &quot;..\source\$(ProjectName)\Properties\AssemblyInfo.cs&quot;" />

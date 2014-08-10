@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{82F53AEF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{34DAA0C4-ADA6-4723-894E-36DA38576745}"
 	ProjectSection(SolutionItems) = preProject
+		..\build\Package.xml = ..\build\Package.xml
 		..\build\Release.bat = ..\build\Release.bat
 		..\build\Target-Build.msbuild = ..\build\Target-Build.msbuild
 		..\build\Target-Package.msbuild = ..\build\Target-Package.msbuild

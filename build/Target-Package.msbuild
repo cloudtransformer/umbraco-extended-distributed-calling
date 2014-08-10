@@ -6,7 +6,7 @@
     <ZipName>AgeBase_Extended_Distributed_Calling</ZipName>
     <OutputFolder>$(MSBuildStartupDirectory)\Output</OutputFolder>
     <ProjectFolder>$(MSBuildStartupDirectory)\..\Source\$(ProjectName)</ProjectFolder>
-    <PackageXmlFile>$(ProjectFolder)\package.xml</PackageXmlFile>
+    <PackageXmlFile>$(MSBuildStartupDirectory)\package.xml</PackageXmlFile>
   </PropertyGroup>
   <Target Name="Package">
     <CallTarget Targets="Copy" />
