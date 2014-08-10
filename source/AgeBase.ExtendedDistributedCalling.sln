@@ -10,14 +10,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{82F53AEF
 		..\nuget\NuGet.config = ..\nuget\NuGet.config
 		..\nuget\NuGet.exe = ..\nuget\NuGet.exe
 		..\nuget\NuGet.targets = ..\nuget\NuGet.targets
-		..\nuget\Package.nuspec = ..\nuget\Package.nuspec
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{34DAA0C4-ADA6-4723-894E-36DA38576745}"
 	ProjectSection(SolutionItems) = preProject
+		..\build\Package.nuspec = ..\build\Package.nuspec
 		..\build\Package.xml = ..\build\Package.xml
 		..\build\Release.bat = ..\build\Release.bat
 		..\build\Target-Build.msbuild = ..\build\Target-Build.msbuild
+		..\build\Target-NuGet.msbuild = ..\build\Target-NuGet.msbuild
 		..\build\Target-Package.msbuild = ..\build\Target-Package.msbuild
 		..\build\Target-Update.msbuild = ..\build\Target-Update.msbuild
 	EndProjectSection
